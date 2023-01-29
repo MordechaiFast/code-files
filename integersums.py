@@ -4,3 +4,8 @@ def add_it_up(till: int) -> int:
     except TypeError:
         return 0
 
+def take_away(this, that):
+    try:
+        return that - this
+    except TypeError:
+        return 0
