@@ -13,8 +13,9 @@ title = match_results.group()
 title = re.sub("<.*?>", "", title) #Remove HTML tags
 print(title)
 
-text = re.sub("<.*?>", "", html)
-name_index = text.find("Name: ") + len("Name: ")
-name_end = text[name_index:].find('\n')
-name = text[name_index:name_index + name_end]
-print(name)
+def find_for_html(text, html):
+    start_index = html.find(text) + len(text)
+    end_offset = html[start_index:].find('<')
+    return html[start_index:start_index + end_offset]
+
+print(find_for_html("Name: ", html))
