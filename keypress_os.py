@@ -17,9 +17,10 @@ EOT = '\x04'  # CTRL+D
 ESC = '\x1b'
 CSI = '['
 
-line = ''
+if __name__ == '__main__':
+  line = ''
 
-while True:
+  while True:
     c = getchar()
     if c == EOT:
         print('exit')
